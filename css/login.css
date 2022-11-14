@@ -17,8 +17,9 @@
 .loginContainer{
     display: flex;
     justify-content: center;
-    /* margin-top: 50px; */
+    margin-top: 40px;
 }
+
 
 .loginSignup-Wrapper{
     display: flex;
@@ -38,4 +39,6 @@
 
 .input-group{
     margin-bottom: 15px;
+    width: 450px;
 }
+
