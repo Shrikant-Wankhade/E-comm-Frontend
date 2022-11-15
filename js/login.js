@@ -71,21 +71,23 @@ function signupFn(){
             body:JSON.stringify(data)
         }).then(response=>response.json())
         .then(data=>{console.log(data)
-        updateSuccErrorMsg(data.message)
+            updateSuccErrorMsg(data.message);
         }).catch((error)=>console.log('error',error));
         
     }
 }
 
+function redirectToHome(){
+    window.location.href ='index.html'
+}
+
 function updateSuccErrorMsg(msg){
     
     succErrMsg.innerText = msg;
-    loginsuccErrMsg.innerText = msg;
 }
 
 function updateAuthErrorMsg(msg){
     authErrMsg.innerText = msg;
-    loginsuccErrMsg.innerText = msg;
 }
 
 function updateLoginSuccErrorMsg(msg){
@@ -119,9 +121,18 @@ function loginFn(){
             body:JSON.stringify(data)
         }).then(response=>response.json())
         .then(data=>{console.log(data)
-            updateLoginSuccErrorMsg(data.message)
+
+            if(data.accessToken){
+                localStorage.setItem('username',data.username)
+                localStorage.setItem('userId',data.id)
+                localStorage.setItem('token',data.accessToken)
+                localStorage.setItem('email',data.email)
+                redirectToHome();
+            }else{
+                updateSuccErrorMsg(data.msg)
+            }
         }).catch((error)=>{console.log('error',error)
-            })
+        })
     }
 
 }
@@ -132,4 +143,8 @@ function loginFn(){
 
 function getElement(id){
     return document.getElementById(id);
+}
+
+if(localStorage.getItem('username')){
+    window.location.href = 'index.html';
 }
