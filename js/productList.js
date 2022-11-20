@@ -67,3 +67,35 @@ function renderProducts(products){
 
 loadCategories();
 loadProducts();
+
+
+
+//events
+
+searchInput.addEventListener('keyup',searchproduct)
+minPrice.addEventListener('change',searchproduct)
+maxPrice.addEventListener('change',searchproduct)
+clear.addEventListener('click',clearAllFilters)
+
+
+//function
+function clearAllFilters(){
+    window.location.reload();
+}
+
+function searchproduct(){
+    const data = {
+        name: searchInput.value,
+        minCost: minPrice.value,
+        maxCost: maxPrice.value
+    }
+
+    if(window.location.search){
+        data.id = window.location.search.split("=")[1];
+    }
+
+    let URI = '/products?';
+    fetch(BASE_URL + URI + new URLSearchParams(data))
+    .then(response=>response.json())
+    .then(data=>renderProducts(data))
+}
