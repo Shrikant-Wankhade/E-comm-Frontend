@@ -22,3 +22,34 @@
     flex: 3;
 
 }
+
+.product-name{
+    font-size: 20px;
+}
+
+.product-price{
+    margin-top:20px;
+    font-size: 32px;
+}
+
+.product-description{
+    margin-top:20px;
+}
+
+.product-description-title{
+    margin-bottom:5px;
+    color: grey;
+}
+
+.product-description-data{
+    font-size: 14px;
+}
+
+.product-details-action{
+    margin-top:40px;
+    width: 250px;
+}
+
+.add-to-cart-err-msg{
+    margin-top:20px;
+}
