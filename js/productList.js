@@ -25,14 +25,14 @@ function loadProducts(){
         data.id = window.location.search.split("=")[1];
     }
 
-    let URI = '/product';
+    let URI = '/products';
 
     if(data.id){
         URI = `/categories/${data.id}/products`
     }
 
     fetch(BASE_URL+URI)
-    .then(response=>response.json)
+    .then(response=>response.json())
     .then(data=>renderProducts(data))
     .catch((err)=>console.log(err));
 }
@@ -50,7 +50,19 @@ function renderCategories(categories){
 }
 
 function renderProducts(products){
+    let productListHtml = '';
+    for(i=0; i<products.length; i++){
+        productListHtml += '<a class="product-item text-decoration-none display-inline-block" href="productDetails.html?productId='+ products[i].id+'">'+
+        '<div class="product-img" >'+
+        '<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyo9nJzFOjaljGsUvoAUOy1ZoolUywgb4wGlI_XflUvVAJVsfRHGsy6k2Lp7NjXuDgZJI&usqp=CAU" >'+
+        '</div>'
+        +'<div class="product-name text-center" >'+ products[i].name+'</div>'
+        +'<div class="product-price text-center">&#8377; '+products[i].cost+'</div>'
+        +'</a>';
+                            
+    }
 
+    productList.innerHTML = productListHtml;
 }
 
 loadCategories();
