@@ -17,3 +17,10 @@ function logoutFn(){
     localStorage.removeItem('username')
     window.location.href = 'login.html';
 }
+
+if(!localStorage.getItem('username')){
+    window.location.href= 'login.html'
+}else{
+    let name = localStorage.getItem('username')
+    username.innerText='Hi ' + name;
+}
