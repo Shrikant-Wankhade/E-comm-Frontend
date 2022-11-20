@@ -6,7 +6,7 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/common.css">
-    <link rel="stylesheet" type="text/css" href="css/productList.css.css">
+    <link rel="stylesheet" type="text/css" href="css/productdetail.css">
   </head>
   <body>
     <div id="productDetailspage">
@@ -29,20 +29,22 @@
 
         <div class="container">
             <div class="row">
-                <div class="product-img d-flex">
-                    <div>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyo9nJzFOjaljGsUvoAUOy1ZoolUywgb4wGlI_XflUvVAJVsfRHGsy6k2Lp7NjXuDgZJI&usqp=CAU">
+                <div class="product-details-wrapper d-flex flex-row">
+                    <div class="product-img d-flex">
+                        <div>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyo9nJzFOjaljGsUvoAUOy1ZoolUywgb4wGlI_XflUvVAJVsfRHGsy6k2Lp7NjXuDgZJI&usqp=CAU">
+                        </div>
                     </div>
-                </div>
 
-                <div class="product-details-box d-flex flex-column">
-                    <div id="productDetails"></div>
-                    <div class="product-details-action btn btn-primary text-decoration-none" id="addToCartBtn">
-                        Add to cart
-                    </div>
-                    <a class="product-details-action btn btn-primary text-decoration-none" id="goToCartBtn" href="cart.html">Go to Cart</a>
-                    <div class="add-to-cart-err-msg text-danger" id="addToCartBtn">
-                        Add to cart
+                    <div class="product-details-box d-flex flex-column">
+                        <div id="productDetails"></div>
+                        <div class="product-details-action btn btn-primary text-decoration-none" id="addToCartBtn">
+                            Add to cart
+                        </div>
+                        <a class="product-details-action btn btn-primary text-decoration-none" id="goToCartBtn" href="cart.html">Go to Cart</a>
+                        <div class="add-to-cart-err-msg text-danger" id="addToCartBtn">
+                            Add to cart
+                        </div>
                     </div>
                 </div>
             </div>
