@@ -30,7 +30,7 @@ showLoginBtn.addEventListener('click',showLogin);
 loginbtn.addEventListener('click',loginFn);
 signupbtn.addEventListener('click',signupFn);
 
-const BASE_URL = 'https://ecommce-be.herokuapp.com/ecomm/api/v1';
+// const BASE_URL = 'https://ecommce-be.herokuapp.com/ecomm/api/v1';
 
 
 //functions
@@ -99,6 +99,9 @@ function updateLoginAuthErrorMsg(msg){
 }
 
 function loginFn(){
+    if(localStorage.getItem('username')){
+        window.location.href = 'index.html';
+    }
     
     if(loginUserName.value == ""){
         // console.log("working")
@@ -145,6 +148,4 @@ function getElement(id){
     return document.getElementById(id);
 }
 
-if(localStorage.getItem('username')){
-    window.location.href = 'index.html';
-}
+
